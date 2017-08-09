@@ -8,8 +8,8 @@ const month = function(date){
   "October", "November", "December"
   ]
 
-  let final = date.getMonth()
-  return months[final]
+  let month = date.getMonth()
+  return months[month]
 }
 
 const reverseSentence = function(string){
@@ -28,17 +28,17 @@ const nameProps = function(object){
 }
 
 const filterBetween = function(arr, min, max){
-  if(typeof(min) === 'string' && typeof(max) === 'string'){
-    return arr.filter(function(word){
-      return word > min && word < max
-    })
-  } else {
-    throw new Error("Pass an array")
+  if(!Array.isArray(arr)){
+    throw new Error("Pass in an array")
   }
+  return arr.filter(function(word){
+    return word > min && word < max
+  })
 }
 
 module.exports = {
   month,
   reverseSentence,
   nameProps,
-  filterBetween}
+  filterBetween
+}
