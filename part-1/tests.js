@@ -12,6 +12,9 @@ describe('month()', function(){
     let date = new Date(2017, 5, 19)
     expect(month(date)).to.equal("June")
   })
+  it('should throw an error if the date is not passed through', function(){
+    expect(month).to.throw(Error)
+  })
 })
 
 describe('reverseSentence()', function(){
@@ -20,6 +23,9 @@ describe('reverseSentence()', function(){
   })
   it('should return a string with the words in reverse order', function(){
     expect(reverseSentence('Hello World')).to.equal('World Hello')
+  })
+  it('should throw an error if the string is not passed through', function(){
+    expect(reverseSentence).to.throw(Error)
   })
 })
 
@@ -35,6 +41,9 @@ describe('nameProps()', function(){
     }
     expect(nameProps(friend)).to.eql(['age', 'name', 'phone'])
   })
+  it('should throw an error if an object is not passed through', function(){
+    expect(nameProps).to.throw(Error)
+  })
 })
 
 describe('filterBetween()', function(){
@@ -45,7 +54,7 @@ describe('filterBetween()', function(){
     let arr = ['dog', 'cat', 'zebra', 'ape', 'lion', 'cow']
     expect(filterBetween(arr, 'deer', 'giraffe')).to.eql(['dog'])
   })
-  // it('throws an error if an object is not passed through', function(){
-  //   expect(filterBetween("An array")).to.throw("Pass in an array")
-  // })
+  it('throws an error if an object is not passed through', function(){
+    expect(filterBetween).to.throw(Error)
+  })
 })
